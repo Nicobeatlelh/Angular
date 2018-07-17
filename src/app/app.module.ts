@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { DetalleComponent } from './components/detalle/detalle.component';
 
 
 
@@ -17,7 +18,8 @@ import { ProductosComponent } from './components/productos/productos.component';
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    ProductosComponent
+    ProductosComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
