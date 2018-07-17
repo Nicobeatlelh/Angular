@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { APP_ROUTING } from './app.routes';
 
+import { ProductosService } from './services/productos.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
@@ -25,7 +27,7 @@ import { DetalleComponent } from './components/detalle/detalle.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

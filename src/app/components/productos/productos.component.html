@@ -1,15 +1,15 @@
-<div class="album py-5 bg-light">
+<div class="album py-5 bg-light" *ngIf="message === ''">
     <div class="container">
 
         <div class="row">
-            <div *ngFor="let iterador of prodObj" class="col-md-4">
+            <div *ngFor="let iterador of productos, let i = index" class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="{{iterador.name}}">
+                    <img class="card-img-top" src="{{iterador.img}}">
                     <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">{{iterador.descripcion}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="detalle">View</a>
+                                <a [routerLink]="['/detalle',i]">View</a>
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                             </div>
                             <small class="text-muted"></small>
@@ -22,3 +22,4 @@
         </div>
     </div>
 </div>
+<h1>{{message}}</h1>

@@ -6,8 +6,9 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: BodyComponent },
+  { path: 'detalle/:id', component: DetalleComponent },
   { path: 'productos', component: ProductosComponent },
-  { path: 'detalle', component: DetalleComponent },
+  { path: 'productos/:nom', component: ProductosComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
