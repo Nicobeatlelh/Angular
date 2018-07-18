@@ -1,0 +1,9 @@
+<div class="container">
+
+    <div class="row">
+        <app-producto-tarjeta [producto]="iterador" [index]="iterador.idx" *ngFor="let iterador of productos, let i = index" class="col-md-4"></app-producto-tarjeta>
+
+
+    </div>
+</div>
+<h1>{{message}}</h1>

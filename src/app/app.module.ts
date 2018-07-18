@@ -11,6 +11,8 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
+import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 
 
@@ -21,7 +23,9 @@ import { DetalleComponent } from './components/detalle/detalle.component';
     BodyComponent,
     FooterComponent,
     ProductosComponent,
-    DetalleComponent
+    DetalleComponent,
+    ProductoTarjetaComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

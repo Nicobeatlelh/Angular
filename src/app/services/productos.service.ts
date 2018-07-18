@@ -19,23 +19,27 @@ export class ProductosService {
     },
     {
       nombre: 'lino',
-      descripcion: `El aceite de coco es un aceite vegetal,
-       conocido también como manteca de coco.
-        Se trata de una sustancia grasa que contiene
-         cerca del 90 % de ácidos saturados extraídos
-          mediante prensado de la pulpa o la carne de los cocos.`,
-      img: this.base + 'aceite-coco.jpg',
+      descripcion: `El lino o linaza es una
+       planta herbácea de la familia de las lináceas.
+        Su tallo se utiliza para confeccionar tejidos
+         y su semilla, llamada linaza,
+       se utiliza para extraer harina y aceite.`,
+      img: this.base + 'lino.jpg',
       valor: 45,
       stock: 50
     },
     {
       nombre: 'chia',
-      descripcion: `El aceite de coco es un aceite vegetal,
-       conocido también como manteca de coco.
-        Se trata de una sustancia grasa que contiene
-         cerca del 90 % de ácidos saturados extraídos
-          mediante prensado de la pulpa o la carne de los cocos.`,
-      img: this.base + 'aceite-coco.jpg',
+      descripcion: `La chía o chan (Salvia hispanica L.)
+       es una planta herbácea de la familia
+        de las lamiáceas; es nativa del centro
+         y sur de México, El Salvador, Guatemala,
+          Nicaragua1​ y Costa Rica y, junto con el lino
+           (Linum usitatissimum), es una de las especies
+            vegetales con la mayor concentración de ácido
+             graso alfa-linolénico
+       omega 3 conocidas hasta 2006.`,
+      img: this.base + 'chia.jpg',
       valor: 45,
       stock: 50
     },
@@ -49,10 +53,12 @@ export class ProductosService {
   public buscarProductos(termino: string) {
     let prodArr: Producto[] = [];
     termino = termino.toLowerCase();
-    for(let prod of this.productos) {
-      let nom = prod.nombre.toLowerCase();
+    for(let i = 0; i < this.productos.length; i++) {
+      let producto = this.productos[i];
+      let nom = producto.nombre.toLowerCase();
       if(nom.indexOf( termino ) >= 0) {
-        prodArr.push(prod);
+        producto.idx = i;
+        prodArr.push(producto);
       }
     }
     return prodArr;
@@ -68,4 +74,5 @@ export interface Producto {
   img: string;
   valor: number;
   stock: number;
+  idx?: number;
 }

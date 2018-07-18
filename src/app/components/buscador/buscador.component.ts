@@ -1,35 +1,27 @@
-import { ProductosService, Producto } from '../../services/productos.service';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Producto, ProductosService } from '../../services/productos.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-buscador',
+  templateUrl: './buscador.component.html',
+  styleUrls: ['./buscador.component.css']
 })
-
-
-export class ProductosComponent {
-
+export class BuscadorComponent implements OnInit {
   productos: Producto[] = [];
   message = '';
   constructor(private _prodService: ProductosService, private _router: Router, private activarRuta: ActivatedRoute) {
+  }
+
+  ngOnInit() {
     this.activarRuta.params.subscribe( params => {
       if (this._prodService.buscarProductos(params['termino']).length !== 0) {
         this.message = '';
       this.productos = this._prodService.buscarProductos(params['termino']);
-      } else {
+      }else {
         this.message = 'No se han encontrado resultados';
       }
     });
-  }
-
-  ngOnInit() {
-    this.productos = this._prodService.getProductos();
-  }
-
-  verProd(i: number) {
-    this._router.navigate(['/detalle', i ]);
   }
 
 }
