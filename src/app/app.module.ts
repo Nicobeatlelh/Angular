@@ -13,6 +13,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { BarraLateralComponent } from './components/barra-lateral/barra-lateral.component';
 
 
 
@@ -25,7 +26,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     ProductosComponent,
     DetalleComponent,
     ProductoTarjetaComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    BarraLateralComponent
   ],
   imports: [
     BrowserModule,
